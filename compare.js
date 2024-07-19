@@ -1,5 +1,5 @@
-import rewrite from "./rewrite.mjs";
-import logger from './logger';
+import rewrite from "./rewrite.js";
+import logger from './logger.js';
 
 const word = {
     original: String,
