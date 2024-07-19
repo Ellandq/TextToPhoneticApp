@@ -39,7 +39,7 @@ app.post('/compare', (req, res) => {
         const result = compare(inputObject);
         res.json({ result });
     } catch (error) {
-        res.status(500).send('Error processing text.');
+        res.status(500).send('Error processing text.' + error);
     }
 });
 
