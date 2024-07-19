@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import rewrite from './rewrite.mjs';
 import compare from './compare.mjs';
+import logger from './logger';
 
 const app = express();
 const port = process.env.PORT || 8080;

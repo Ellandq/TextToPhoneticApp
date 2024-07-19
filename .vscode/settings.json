@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/5ff3d156-3cea-41c7-b6a4-5099e59a12b5/resourceGroups/rg-juliaKa-fr-sandbox-01/providers/Microsoft.Web/sites/TextToPhoneticApp",
+    "appService.deploySubpath": "."
+}

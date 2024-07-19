@@ -1,6 +1,7 @@
 import format_AS from './formats/AS.mjs';
 import format_IPA from './formats/IPA.mjs';
 import letters from './formats/alfabet.mjs';
+import logger from './logger';
 
 const alphabet = letters.all;
 const vowelsArray = letters.vowels;

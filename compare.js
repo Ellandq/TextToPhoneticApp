@@ -1,4 +1,5 @@
 import rewrite from "./rewrite.mjs";
+import logger from './logger';
 
 const word = {
     original: String,
@@ -14,6 +15,7 @@ const returnObject = {
 
 export default function compare(inputObject){
 
+    logger.info(inputObject);
     const allWords = (inputObject.text1.split(/[\s\n,-]+/g)
     .concat(inputObject.text2.split(/[\s\n,-]+/g)));
 
