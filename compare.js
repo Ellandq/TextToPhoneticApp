@@ -1,6 +1,7 @@
 import rewrite from "./rewrite.js";
 import logger from './logger.js';
 
+
 const wordFormat = {
     original: String,
     AS: String,
@@ -13,6 +14,7 @@ const returnObject = {
     missing: [String]
 };
 
+//This function compares two texts by converting them into phonetic formats and then determining which words overlap and which are missing.
 export function compare(inputObject) {
     logger.info(`Is Compare call | Input Object: ${JSON.stringify(inputObject)}`)
 
@@ -31,6 +33,7 @@ export function compare(inputObject) {
     return returnObject;
 }
 
+//Checks whether all words from the first text are contained in the second text.
 export function isContained(inputObject) {
     const wordSet1 = formatWords(inputObject.text1); 
     const wordSet2 = formatWords(inputObject.text2); 
@@ -52,7 +55,7 @@ export function isContained(inputObject) {
     return allContained;
 }
 
-
+// Checks if two texts are identical in terms of their phonetic representation. 
 export function isExactMatch(inputObject) {
     const wordSet1 = formatWords(inputObject.text1); 
     const wordSet2 = formatWords(inputObject.text2); 
@@ -73,7 +76,7 @@ export function isExactMatch(inputObject) {
     return allMatch;
 }
 
-
+// Converts a text into phonetic formats. 
 function formatWords(words) {
     const splitWords = words.split(/[\s\n,-]+/g);
     const converted = rewrite(words);
@@ -93,6 +96,7 @@ function formatWords(words) {
     return result;
 }
 
+// Compares formatted words from two sets to find overlapping and missing words. 
 function compareWordsFormatted(words1, words2, allWords) {
     let _overlapping = [];
     let _missing = [...allWords];

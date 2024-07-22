@@ -1,6 +1,8 @@
-import { sonority, updateAlphabet, makeSofter, vowelsAccent, specialSofter, reduceRepeat, } from "../rewrite.mjs";
+// IPA to międzynarodowy alfabet fonetyczny
+import { sonority, updateAlphabet, makeSofter, vowelsAccent, specialSofter, reduceRepeat, } from "../rewrite.js";
+
 // podział liter alfabetu
-import letters from "./alfabet.mjs";
+import letters from "./alfabet.js";
 const alphabet = letters.all;
 const vowelsArray = letters.vowels;
 const consonantsArray = alphabet.filter((letter) => !vowelsArray.includes(letter));
@@ -8,6 +10,7 @@ const voicedArray = letters.voiced;
 const voicelessArray = letters.voiceless;
 const softArray = letters.soft;
 const hardArray = alphabet.filter((letter) => !softArray.includes(letter));
+
 // zamiana zapisu gramatycznego
 const grammar = {
     szi: "ʃʲ",
@@ -60,6 +63,7 @@ const softer = {
     ɔ: "ɔ̇",
     u: "ü",
 };
+
 // główna funkcja
 export default function format_IPA(word) {
     let changed = "";

@@ -1,6 +1,8 @@
-import { sonority, updateAlphabet, makeSofter, vowelsAccent, specialSofter, reduceRepeat, } from "../rewrite.mjs";
+// AS to zapis w slawistycznym alfabecie fonetycznym
+import { sonority, updateAlphabet, makeSofter, vowelsAccent, specialSofter, reduceRepeat, } from "../rewrite.js";
+
 // podział liter alfabetu
-import letters from "./alfabet.mjs";
+import letters from "./alfabet.js";
 const alphabet = letters.all;
 const vowelsArray = letters.vowels;
 const consonantsArray = alphabet.filter((letter) => !vowelsArray.includes(letter));
@@ -8,6 +10,7 @@ const voicedArray = letters.voiced;
 const voicelessArray = letters.voiceless;
 const softArray = letters.soft;
 const hardArray = alphabet.filter((letter) => !softArray.includes(letter));
+
 // zamiana zapisu gramatycznego
 const grammar = {
     szi: "šʹ",
@@ -54,6 +57,7 @@ const softer = {
     o: "ȯ",
     u: "ü",
 };
+
 // główna funkcja
 export default function format_AS(word) {
     let changed = "";
@@ -62,6 +66,7 @@ export default function format_AS(word) {
     changed = reduceRepeat(changed);
     return changed;
 }
+
 // zmiana gramatyki
 function changeGrammar(word) {
     // jeśli "i" jest ostatnią głoską, to "i" musi zostać
